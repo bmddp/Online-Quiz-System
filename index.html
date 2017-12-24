@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang=>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+   <title>online quiz system</title>
+   <link rel="stylesheet" href="new 1.css">
+   <script>
+   
+   function validateForm()
+{
+    var name = document.form1.n;
+    var email = document.form1.e;
+    var pass = document.form1.p;
+
+				if(name=="")
+				{
+				alert("Please Enter Your Name");
+				document.form1.n.focus();
+				return false;
+				}
+				if(!isNaN(name))
+				{
+				alert("Please Enter Only Characters");
+				document.form1.n.select();
+				return false;
+				}
+				if ((name.length < 5) || (name.length > 15))
+				{
+				alert("Your Character must be 5 to 15 Character");
+				document.form1.n.select();
+				return false;
+				}
+
+    if (email.value == "")
+		{
+		window.alert("Please enter a valid e-mail address.");
+		email.focus();
+		return false;
+		}
+		if (email.value.indexOf("@", 0) < 0)
+		{
+		window.alert("Please enter a valid e-mail address.");
+		email.focus();
+		return false;
+		}
+		if (email.value.indexOf(".", 0) < 0)
+		{
+		window.alert("Please enter a valid e-mail address.");
+		email.focus();
+		return false;
+		}
+		
+		if(pass=="")
+			{
+			alert("Please Enter Your Password");
+			document.form1.p.focus();
+			return false;
+			}
+			if ((pass.length < 4) || (pass.length > 8))
+			{
+			alert("Your Password must be 4 to 8 Character");
+			document.form1.p.select();
+			return false;
+			}
+
+}
+
+
+   
+   
+   </script>
+      
+</head>
+
+<body>
+   <center><h1>login and registration system </h1></center>
+	   <div id="login_container">
+	       <br>
+		   
+			<center>
+			  <h2>login system </h2>
+			  <br>
+			  
+			  Email<input type="email" name="e" placeholder="enter your email"/><br><br>
+		      Passw<input type="password" name="p" placeholder="enter your password" /><br><br>
+			  <input type="submit" name="submit" value="Submit"/><br><br>
+			  
+			</center>
+	   </div>
+
+   <div id="register_container">
+           <br>
+           <br>
+		   <form name='form1' action="#" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+           <center>
+			  <h2>Registration system </h2>
+			  <br>
+			  Name<input type="text" name="n" placeholder="enter your name" required/><br><br>
+			  Email<input type="email" name="e" placeholder="enter your email" required/><br><br>
+		      Passw <input type="password" name="p" placeholder="enter your password" required/><br><br>
+		      upload your image &emsp;&nbsp;<input type="file" name="img"/><br><br>
+			  <input type="submit" name="submit" value="Submit"/><br><br>
+			 </form>
+			  
+			</center>
+   
+   
+   </div>
+   
+  </body>
+
+
+</html>
